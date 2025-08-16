@@ -18,18 +18,18 @@ export default function EditProduct() {
     mutationFn: updateProduct,
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["products"] });
-      toast.success("Updated!");
+      toast.success("Product updated!");
       navigate("/");
     },
-    onError: () => toast.error("This product cannot be updated on DummyJSON API!")
+    onError: () => toast.error("This product cannot be updated on DummyJSON API!"),
   });
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!product) return <p>Not found</p>;
+  if (isLoading) return <p className="flex items-center justify-center h-screen">Loading...</p>;
+  if (!product) return <p className="flex items-center justify-center h-screen">Not found</p>;
 
   return (
-    <div className="container">
-      <h1 className="text-xl font-bold mb-3 mt-4">Edit Product</h1>
+    <div className="max-w-2xl mx-auto p-4 sm:p-6">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">Edit Product</h1>
       <ProductForm
         initial={product}
         onSubmit={(d) => mutation.mutate({ ...product, ...d })}

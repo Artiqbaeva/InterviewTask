@@ -25,7 +25,7 @@ const ProductsList = () => {
     onError: () => toast.error("Delete failed!"),
   });
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <p className="flex items-center justify-center">Loading...</p>;
 
  
   const showing = data?.products.slice(
