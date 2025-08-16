@@ -20,10 +20,10 @@ export default function ProductForm({ initial = null, onSubmit }: Props) {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="bg-white p-4 rounded shadow mb-5 flex gap-3 container mx-auto items-end"
-    >
-      <div>
+    onSubmit={handleSubmit(onSubmit)}
+    className="bg-white p-4 rounded shadow mb-5 flex flex-col md:flex-row gap-4 container  items-start md:items-end"
+  >
+      <div className="w-full md:w-auto">
         <label className="text-sm">Title: </label>
         <input
           className="border px-2 py-1 rounded"
